@@ -1,26 +1,42 @@
-import React, { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+// import React, { useEffect, useState } from 'react'
+// import { useNavigate } from 'react-router-dom'
 
-const LandingPage = () => {
-  const navigate = useNavigate();
-  const [test, setTest] = useState(0);
+// const LandingPage = () => {
+//   const navigate = useNavigate();
+//   const [test, setTest] = useState(0);
 
-  useEffect(() => {
+//   useEffect(() => {
 
-    if(test === 7) {
-        navigate('/login')
-    }
-  }, [test]);
+//     if(test === 7) {
+//         navigate('/login')
+//     }
+//   }, [test]);
 
-  useEffect(() => {
-    return () => {
-        console.log('Component has been unmounted');
-    }
-  }, [])
+//   useEffect(() => {
+//     return () => {
+//         console.log('Component has been unmounted');
+//     }
+//   }, [])
 
+//   return (
+//     <div onClick={() => setTest(test+1)}>LandingPage has been clicked: {test} times</div>
+//   )
+// }
+
+// export default LandingPage
+
+import { useNavigate } from 'react-router-dom';
+import React from 'react';
+import '../css/Landingpage.css';
+const Landingpage = () => {
+  const navigate=useNavigate();
   return (
-    <div onClick={() => setTest(test+1)}>LandingPage has been clicked: {test} times</div>
+    <div className='my-app-container'>
+      <div className='my-app-header'>welcome to my-app</div>
+      <button className='my-app-button' onClick={()=>navigate('/login')}>Login</button>
+      
+    </div>
   )
 }
 
-export default LandingPage
+export default Landingpage
